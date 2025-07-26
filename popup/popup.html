@@ -1,0 +1,51 @@
+<!-- chrome-regex-search-extension/popup/popup.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Regex Finder</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body class="popup">
+
+  <form id="searchForm">
+    <div class="form-group">
+      <label for="pattern">🧬 Pattern :</label>
+      <input id="pattern" type="text" placeholder="\\b\\w+\\b" />
+    </div>
+
+    <div class="form-group">
+      <label for="flags">🎛 Flags :</label>
+      <input id="flags" type="text" value="g" size="3" />
+    </div>
+
+    <div class="btn-row">
+      <button id="btnSearch" type="submit">🔍 Rechercher</button>
+      <button id="btnClear" type="button">🧹 Effacer</button>
+    </div>
+  </form>
+
+  <div id="nav" hidden>
+    <button id="btnPrev" type="button">⟨ Préc</button>
+    <span id="counter">0 / 0</span>
+    <button id="btnNext" type="button">Suiv ⟩</button>
+  </div>
+
+  <ul id="results"></ul>
+
+  <div class="footer-separator"></div>
+  <footer>
+    <p>Créé par <strong>Miroum</strong></p>
+    <p>
+      <a href="https://github.com/Mir0um/Regex-Finder" target="_blank">
+        Voir le projet sur GitHub
+      </a>
+    </p>
+    <p class="inspiration">
+      Inspiré par <a href="https://github.com/brandon1024/find" target="_blank">find+ | Regex Find-in-Page Tool</a>
+    </p>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

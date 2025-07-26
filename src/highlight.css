@@ -1,0 +1,8 @@
+/* chrome-regex-search-extension/src/highlight.css */
+.regex-highlight {
+    background-color: #ffff00;
+  }
+  .regex-highlight.current {
+    background-color: #ffa500;
+  }
+  

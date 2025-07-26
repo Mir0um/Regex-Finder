@@ -1,0 +1,13 @@
+chrome-regex-search-extension/
+├── manifest.json
+├── icons/
+│   ├── icon16.png
+│   ├── icon48.png
+│   └── icon128.png
+├── src/
+│   ├── content.js
+│   └── highlight.css
+└── popup/
+    ├── popup.html
+    ├── popup.js
+    └── popup.css
