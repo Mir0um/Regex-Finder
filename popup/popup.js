@@ -19,12 +19,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnClear   = f("btnClear");
   const btnPrev    = f("btnPrev");
   const btnNext    = f("btnNext");
+  const btnExport  = f("btnExport");
   const nav        = f("nav");
   const counter    = f("counter");
   const resultsUL  = f("results");
 
   let total = 0;
   let current = 0;
+  let lastResults = [];
+
+  // Désactive l'export tant qu'aucune recherche n'est effectuée
+  btnExport.disabled = true;
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -42,6 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.hidden = !total;
 
     resultsUL.innerHTML = "";
+    lastResults = res.results;
+    btnExport.disabled = lastResults.length === 0;
     res.results.forEach((r, i) => {
       const li = document.createElement("li");
       li.textContent = `${i + 1}. ${r.match}  ⇒ [${r.groups.join(", ")}]`;
@@ -56,6 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.hidden = true;
     resultsUL.innerHTML = "";
     total = current = 0;
+    lastResults = [];
+    btnExport.disabled = true;
   });
 
   btnPrev.addEventListener("click", async () => {
@@ -70,5 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
     current = current === total ? 1 : current + 1;
     counter.textContent = `${current} / ${total}`;
     await sendToActiveTab({ type: "navigate-next" });
+  });
+
+  btnExport.addEventListener("click", () => {
+    if (!lastResults.length) return;
+    const data = JSON.stringify(lastResults, null, 2);
+    const blob = new Blob([data], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "regex-results.json";
+    a.click();
+    URL.revokeObjectURL(url);
   });
 });

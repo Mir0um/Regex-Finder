@@ -118,4 +118,39 @@ body.popup {
     font-size: 11px;
     color: #778;
   }
+
+  /* Mode sombre automatique */
+  @media (prefers-color-scheme: dark) {
+    body.popup {
+      background: #2b2b2b;
+      color: #eee;
+    }
+    input {
+      background: #444;
+      border-color: #666;
+      color: #fff;
+    }
+    button {
+      background-color: #0066b8;
+    }
+    button:hover {
+      background-color: #005a9c;
+    }
+    #results {
+      border-top: 1px solid #555;
+    }
+    #results li {
+      border-bottom: 1px solid #555;
+    }
+    .footer-separator {
+      border-top: 1px solid #555;
+    }
+    footer {
+      color: #aaa;
+    }
+    footer a {
+      color: #4eaaff;
+    }
+  }
+  
   

@@ -18,6 +18,8 @@
 - ✅ Navigation **Précédent / Suivant**
 - ✅ Résumé des résultats dans un pop-up
 - ✅ Aucun tracking ni publicité
+- ✅ Mode sombre automatique
+- ✅ Export des résultats en JSON
 
 ---
 
@@ -97,11 +99,12 @@ Regex-Finder/
 
 ## 🧩 Roadmap / idées futures
 
-* [ ] Support du thème sombre (Dark Mode)
+* [x] Support du thème sombre (Dark Mode)
 * [ ] Surlignage dans les iframes
 * [ ] Support des pages dynamiques (SPA)
 * [ ] Mode Live / Recherche instantanée
-* [ ] Support export CSV ou JSON des résultats
+* [x] Support export CSV ou JSON des résultats
+* [ ] conserver les dernières regex utilisées
 
 ---
 
