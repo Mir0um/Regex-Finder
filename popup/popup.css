@@ -84,6 +84,25 @@ body.popup {
     padding: 4px 0;
     border-bottom: 1px solid #eee;
   }
+
+  #history {
+    margin-top: 8px;
+  }
+
+  #historyList {
+    list-style: none;
+    padding: 0;
+    font-size: 12px;
+  }
+
+  #historyList li {
+    cursor: pointer;
+    padding: 2px 0;
+  }
+
+  #historyList li:hover {
+    text-decoration: underline;
+  }
   
   /* Styles pour le footer */
   .footer-separator {

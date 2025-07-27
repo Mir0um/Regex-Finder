@@ -20,7 +20,8 @@
 - ✅ Aucun tracking ni publicité
 - ✅ Mode sombre automatique
 - ✅ Export des résultats en JSON
-- ✅ Sauvegarde de la dernière regex utilisée
+- ✅ Historique des 5 dernières regex utilisées
+- ✅ Recherche instantanée (mode live)
 
 ---
 
@@ -103,9 +104,9 @@ Regex-Finder/
 * [x] Support du thème sombre (Dark Mode)
 * [ ] Surlignage dans les iframes
 * [ ] Support des pages dynamiques (SPA)
-* [ ] Mode Live / Recherche instantanée
-* [x] Support export CSV ou JSON des résultats
-* [x] conserver les dernières regex utilisées
+* [x] Mode Live / Recherche instantanée
+* [x] Support export CSV ou JSON des résultats␊
+* [x] conserver l'historique des regex utilisées
 
 ---
 
