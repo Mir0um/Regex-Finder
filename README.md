@@ -20,6 +20,7 @@
 - ✅ Aucun tracking ni publicité
 - ✅ Mode sombre automatique
 - ✅ Export des résultats en JSON
+- ✅ Sauvegarde de la dernière regex utilisée
 
 ---
 
@@ -104,7 +105,7 @@ Regex-Finder/
 * [ ] Support des pages dynamiques (SPA)
 * [ ] Mode Live / Recherche instantanée
 * [x] Support export CSV ou JSON des résultats
-* [ ] conserver les dernières regex utilisées
+* [x] conserver les dernières regex utilisées
 
 ---
 
@@ -112,7 +113,7 @@ Regex-Finder/
 
 * `"activeTab"` : pour injecter les scripts sur la page active
 * `"scripting"` : injecter JS/CSS à la volée
-* `"storage"` *(à venir)* : conserver les dernières regex utilisées
+* `"storage"` : conserver les dernières regex utilisées
 
 ---
 

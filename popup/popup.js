@@ -28,6 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
   let current = 0;
   let lastResults = [];
 
+  // Récupère la dernière regex utilisée depuis le stockage
+  chrome.storage.local.get(["lastPattern", "lastFlags"], (data) => {
+    if (data.lastPattern) patternInp.value = data.lastPattern;
+    if (data.lastFlags) flagsInp.value = data.lastFlags;
+  });
+
   // Désactive l'export tant qu'aucune recherche n'est effectuée
   btnExport.disabled = true;
 
@@ -35,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const pattern = patternInp.value.trim();
     const flags   = flagsInp.value.trim();
+    chrome.storage.local.set({ lastPattern: pattern, lastFlags: flags });
     const res = await sendToActiveTab({ type: "regex-search", pattern, flags });
 
     if (res.error) {
