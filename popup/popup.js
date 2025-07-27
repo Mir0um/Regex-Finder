@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const patternInp  = f("pattern");
   const flagsInp    = f("flags");
   const btnClear    = f("btnClear");
+  const btnSave     = f("btnSave");
   const btnPrev     = f("btnPrev");
   const btnNext     = f("btnNext");
   const btnExport   = f("btnExport");
@@ -74,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function executeSearch() {
-    const pattern = patternInp.value.trim();
+    const pattern = patternInp.value;
     const flags   = flagsInp.value.trim();
     history = history.filter(h => h.pattern !== pattern || h.flags !== flags);
     history.unshift({ pattern, flags });
@@ -86,6 +87,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (res.error) {
       alert("Erreur : " + res.error);
+      nav.hidden = true;
+      resultsUL.innerHTML = "";
+      total = current = 0;
+      lastResults = [];
+      counter.textContent = "0 / 0";
+      btnExport.disabled = true;
       return;
     }
     total = res.count;
@@ -127,6 +134,8 @@ document.addEventListener("DOMContentLoaded", () => {
     counter.textContent = `${current} / ${total}`;
     await sendToActiveTab({ type: "navigate-next" });
   });
+
+  btnSave.addEventListener("click", executeSearch);
 
   btnExport.addEventListener("click", () => {
     if (!lastResults.length) return;

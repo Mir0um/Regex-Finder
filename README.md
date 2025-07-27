@@ -20,9 +20,9 @@
 - ✅ Aucun tracking ni publicité
 - ✅ Mode sombre automatique
 - ✅ Export des résultats en JSON
+- ✅ Sauvegarde manuelle de la regex via le bouton **Save**
 - ✅ Historique des 5 dernières regex utilisées
 - ✅ Recherche instantanée (mode live)
-
 ---
 
 
@@ -67,6 +67,10 @@ Cliquez sur l’icône de l’extension dans la barre Chrome.
 ### 5. Effacer
 
 * Cliquez sur **🧹 Effacer** pour supprimer les surbrillances
+
+### 6. Sauvegarder
+
+* Utilisez le bouton **💾 Save** pour mémoriser la regex courante
 
 ---
 
