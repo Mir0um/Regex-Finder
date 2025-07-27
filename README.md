@@ -27,7 +27,7 @@
 1. Clonez ou téléchargez ce dépôt Git :
    ```bash
    git clone https://github.com/Mir0um/Regex-Finder.git
-````
+   ```
 
 2. Ouvrez Chrome et accédez à :
    [`chrome://extensions`](chrome://extensions)
