@@ -111,6 +111,7 @@ Regex-Finder/
 * [x] Mode Live / Recherche instantanée
 * [x] Support export CSV ou JSON des résultats␊
 * [x] conserver l'historique des regex utilisées
+* [ ] menue avec des obtion (ider d'obtion a trouver encore)
 
 ---
 
