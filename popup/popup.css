@@ -40,6 +40,11 @@ body.popup {
   
   button {
     flex: 1;
+    margin: 0 5px;
+  }
+
+  .btn {
+    flex: 1;
     padding: 6px 10px;
     font-size: 14px;
     border: none;
@@ -50,7 +55,7 @@ body.popup {
     transition: background-color 0.2s;
   }
   
-  button:hover {
+  .btn:hover {
     background-color: #005fa3;
   }
   
