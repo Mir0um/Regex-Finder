@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     searchTimer = setTimeout(executeSearch, 300);
   }
 
-  async function executeSearch() {
+  function saveCurrent() {
     const pattern = patternInp.value;
     const flags   = flagsInp.value.trim();
     history = history.filter(h => h.pattern !== pattern || h.flags !== flags);
@@ -82,7 +82,11 @@ document.addEventListener("DOMContentLoaded", () => {
     history = history.slice(0, 5);
     chrome.storage.local.set({ history, lastPattern: pattern, lastFlags: flags });
     renderHistory(history);
+  }
 
+  async function executeSearch() {
+    const pattern = patternInp.value;
+    const flags   = flagsInp.value.trim();
     const res = await sendToActiveTab({ type: "regex-search", pattern, flags });
 
     if (res.error) {
@@ -135,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
     await sendToActiveTab({ type: "navigate-next" });
   });
 
-  btnSave.addEventListener("click", executeSearch);
+  btnSave.addEventListener("click", saveCurrent);
 
   btnExport.addEventListener("click", () => {
     if (!lastResults.length) return;
